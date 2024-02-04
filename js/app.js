@@ -1,4 +1,4 @@
-
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 // light theme to dark theme change
 const toggleButton = document.querySelector('#toggleButton');
     const selectedTheme = localStorage.getItem('selected-theme');
