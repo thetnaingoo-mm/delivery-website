@@ -1,0 +1,189 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+:root{
+   
+    --hue: 45;
+    --sat: 98%;
+    --first-color: hsl(var(--hue), var(--sat), 60%);
+    --first-color-light: hsl(var(--hue), var(--sat), 85%);
+    --first-color-lighten: hsl(var(--hue), var(--sat), 80%);
+    --first-color-alt: hsl(var(--hue), var(--sat), 53%);
+    --title-color: hsl(var(--hue), 4%, 15%);
+    --text-color: hsl(var(--hue), 4%, 35%);
+    --text-color-light: hsl(var(--hue), 4%, 65%);
+    --body-color: hsl(var(--hue), 0%, 100%);
+    --container-color: #FFF;
+
+}
+
+// bootstrap variable custom class
+$primary : hsl(45,98%,60%);
+
+$warning : hsl(45,98%, 80%);
+
+$dark: hsl(45,4%,15%);
+
+$light: hsl(45, 4%, 65%);
+
+
+
+$font-family-sans-serif:  'Poppins', sans-serif;
+
+$navbar-nav-link-padding-x  : 20px;
+
+$font-weight-normal : 400;
+$btn-font-weight : 500;
+
+$border-radius : 3rem;
+
+$btn-padding-x : 1.5rem;
+
+$btn-padding-y : 0.75rem;
+
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+  8: $spacer * 7.5,
+);
+
+//  bootstrap link
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: var(--text-color);
+    background-color: var(--body-color);
+}
+
+/* Active link */
+.active-link {
+    position: relative;
+  }
+
+.active-link::before {
+    content: '';
+    position: absolute;
+    bottom: -.30rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--title-color);
+    border-radius: 50%;
+}
+  
+
+nav{
+    background-color: var(--body-color);
+}
+
+.navbar-brand, .nav-link{
+    color: var(--text-color);
+}
+.nav-link:hover{
+    color: var(--text-color);
+}
+
+.navbar-toggler{
+    padding: 0;
+    border: 0;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.svg__color{
+    fill: hsl(45,98%,60%);
+}
+.svg__blob{
+    fill: hsl(45, 98%, 85%);
+    
+}
+.svg__img{
+    // width: 470px;
+}
+
+.services__svg{
+    width: 135px;
+}
+
+// dark theme
+body.dark-mode {
+    --first-color-light: hsl(var(--hue), var(--sat), 75%);
+    --title-color: hsl(var(--hue), 4%, 95%);
+    --text-color: hsl(var(--hue), 4%, 80%);
+    --body-color: hsl(var(--hue), 8%, 13%);
+    --container-color: hsl(var(--hue), 8%, 16%);
+    --scroll-bar-color: hsl(var(--hue), 4%, 32%);
+    --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
+}
+
+.btn-link{
+    color: var(--text-color);
+}
+
+.dark-theme, .footer {
+    background-color: var(--container-color);
+}
+
+
+.footer-logo{
+    color: var(--text-color);
+}
+
+.footer-description, .footer-link {
+    color: var(--title-color);
+    font-size: .813rem;
+  }
+
+  @media screen and (max-width: 991px  ){
+
+    //change theme button on mobile screen 
+    .change-theme{
+        font-size: 1.8rem;
+        background: none;
+        color: var(--text-color);
+        position: absolute;
+        right: 20px;
+        top: 6px;
+        cursor: pointer;
+    }
+
+    //navigation list on mobile
+    .nav-list{ 
+        background-color: var(--container-color);
+        margin-top: 10px;   
+        border-radius: 2rem;      
+    }
+
+    .nav-btn{
+        display: none;
+    }
+}
+
+//chagne theme button on large screen
+@media screen and (min-width: 992px){
+    .change-theme{
+        position: initial;
+        font-size: 1.8rem;
+        background: none;
+        color: var(--text-color);
+        margin-left: 20px;
+        cursor: pointer;
+    }
+}
+

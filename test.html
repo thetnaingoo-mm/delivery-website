@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Active Class on Scroll</title>
+    <style>
+        /* Style for the active class */
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        /* Other navbar styles */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Placeholder styles for sections */
+        section {
+            height: 500px;
+            margin: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="navbar">
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+    </ul>
+
+    <section id="section1">Section 1</section>
+    <section id="section2">Section 2</section>
+    <section id="section3">Section 3</section>
+
+    <script>
+        // Get all section elements
+        const sections = document.querySelectorAll('section');
+
+        // Function to check which section is in view
+        function setActiveNavItem() {
+            let scrollPosition = window.scrollY;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop - 50 && scrollPosition < sectionTop + sectionHeight - 50) {
+                    const navItem = document.querySelector(`a[href="#${section.id}"]`);
+                    document.querySelectorAll('ul li a').forEach(item => item.classList.remove('active'));
+                    navItem.classList.add('active');
+                }
+            });
+        }
+
+        // Call setActiveNavItem on scroll
+        window.addEventListener('scroll', setActiveNavItem);
+        
+        // Call setActiveNavItem on page load
+        window.addEventListener('load', setActiveNavItem);
+    </script>
+
+</body>
+</html>
